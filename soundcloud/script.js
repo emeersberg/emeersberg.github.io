@@ -9,7 +9,7 @@ $(document).ready(function() {
         SC.oEmbed(track.permalink_url, document.getElementById('player'));
         })
 
-    SC.get('/tracks', { genres: 'foo' }, function(tracks) {
+    SC.get('/tracks', { genres: 'industrial, rock' }, function(tracks) {
     $(tracks).each(function(index, track) {
       $('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
     });
