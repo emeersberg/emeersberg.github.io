@@ -22,7 +22,7 @@ var getmusicgenre = function(genre) {
 	
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
-    		SC.oEmbed(track.permalink_url, $('#results').append($('<li></li>'));
+    		SC.oEmbed(track.permalink_url, $('#results').append());
     		//$('#results').append($('<li></li>').html(SC.oEmbed(track.permalink_url);
       		//$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
     	});
