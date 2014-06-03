@@ -16,12 +16,3 @@
     </body>
 </html>
 
-var getmusicgenre = function() {
-	
-	SC.get('/tracks', { genres: 'industrial' }, function(tracks) {
-    	$(tracks).each(function(index, track) {
-      		$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
-    	});
-  	});
-
-}
