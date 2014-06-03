@@ -3,6 +3,13 @@ SC.initialize({
 });
 
 $(document).ready(function() {
+
+SC.connect(function() {
+  SC.get('/me', function(me) { 
+    alert('Hello, ' + me.username); 
+  });
+});
+	
     SC.get("/tracks/293",function(track) {
         SC.oEmbed(track.permalink_url, document.getElementById('player'));
         })
