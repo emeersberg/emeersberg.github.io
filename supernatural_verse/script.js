@@ -1,6 +1,5 @@
 SC.initialize({
-  client_id: 'e9cc713d5d9719ed8b06e42beff3c38c',
-  redirect_uri: 'http://emeersberg.github.io/soundcloud/'
+  client_id: 'e9cc713d5d9719ed8b06e42beff3c38c'
 });
 
 $(document).ready(function() {
