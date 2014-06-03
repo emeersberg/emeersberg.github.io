@@ -7,7 +7,21 @@
         <script src="script.js"></script>
     </head>
     <body>
+    	<form class="music-genre" onsubmit="return false;">
+	    	<input type="text" placeholder='genre' name="tags" size="30" autofocus required>
+			<input type="submit" value="Submit">
+		</form>
         <div id="player"></div>
          <ul id="results">
     </body>
 </html>
+
+var getmusicgenre = function() {
+	
+	SC.get('/tracks', { genres: 'industrial' }, function(tracks) {
+    	$(tracks).each(function(index, track) {
+      		$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
+    	});
+  	});
+
+}
