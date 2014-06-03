@@ -5,12 +5,13 @@ SC.initialize({
 $(document).ready(function() {
 
 
-    SC.get("/tracks/293",function(track) {
-        SC.oEmbed(track.permalink_url, document.getElementById('player'));
-        })
+    //SC.get("/tracks/293",function(track) {
+    //    SC.oEmbed(track.permalink_url, document.getElementById('player'));
+    //    })
 
-    SC.get('/tracks', { genres: 'industrial; rock' }, function(tracks) {
+    SC.get('/tracks', { genres: 'industrial' }, function(tracks) {
     $(tracks).each(function(index, track) {
+    	SC.oEmbed(track.permalink_url, document.getElementById('player'));
       $('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
     });
   });
