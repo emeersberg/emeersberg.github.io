@@ -39,7 +39,7 @@ var getmusicgenre = function(genre) {
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
     		SC.oEmbed(track.permalink_url, document.getElementById('player'));
-      	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + track.group + "<input type='text' value=" + track.permalink_url + ">"));
+      	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + track.band + "<input type='text' value=" + track.permalink_url + ">"));
     	});
   	});
 
