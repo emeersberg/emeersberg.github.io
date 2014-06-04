@@ -12,8 +12,8 @@ $(document).ready(function() {
 		getmusicgenre(genre);
 	});
 
-  $(this).find('#results').nearest('li').click(function() {
-      SC.oEmbed(track.permalink_url);
+  $("button").on("click",function() {
+      SC.oEmbed($("button").val());
   });
 
     //SC.get("/tracks/293",function(track) {
@@ -27,7 +27,7 @@ var getmusicgenre = function(genre) {
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
     		SC.oEmbed(track.permalink_url, document.getElementById('player'));
-      	$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre + track.permalink_url));
+      	$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre + "<ul>" + track.permalink_url + "<ul"));
     	});
   	});
 
