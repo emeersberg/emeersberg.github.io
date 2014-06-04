@@ -13,8 +13,8 @@ $(document).ready(function() {
 	});
 
   $("button").on("click",function() {
-      alert($("button").val());
-      SC.oEmbed($("button").val(),document.getElementById('player'));
+      alert($("#inputvalue1").val());
+      SC.oEmbed($("#inputvalue1").val(),document.getElementById('player'));
   });
 
     //SC.get("/tracks/293",function(track) {
