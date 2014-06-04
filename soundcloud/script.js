@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 
   $("button").on("click",function() {
-      alert("yes");
+      alert($("button").val());
       SC.oEmbed($("button").val(),document.getElementById('player'));
   });
 
