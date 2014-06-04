@@ -23,7 +23,7 @@ var getmusicgenre = function(genre) {
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
     		SC.oEmbed(track.permalink_url, document.getElementById('player'));
-      	$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
+      	$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre + track.permalink_url));
     	});
   	});
 
