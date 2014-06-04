@@ -38,8 +38,8 @@ var getmusicgenre = function(genre) {
 	
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
-    		SC.oEmbed(track.permalink_url+"auto_play=1", document.getElementById('player'));
-      	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + track.artist + "<input type='text' value=" + track.permalink_url + ">"));
+    		SC.oEmbed(track.permalink_url, document.getElementById('player'));
+      	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + track.username + "<input type='text' value=" + track.permalink_url + ">"));
     	});
   	});
 
