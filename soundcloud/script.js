@@ -12,10 +12,15 @@ $(document).ready(function() {
 		getmusicgenre(genre);
 	});
 
-  $("button").on("click",function() {
+  /*$("button").on("click",function() {
       alert($("#inputvalue1").val());
       SC.oEmbed($("#inputvalue1").val(),document.getElementById('player'));
-  });
+  });*/
+
+    $(this).find("#results").on("click",function() {
+      alert($(this).find("#results").nearest("input[type='text']").val());
+      SC.oEmbed($(this).find("#results").nearest("input[type='text']").val(),document.getElementById('player'));
+    });
 
     //SC.get("/tracks/293",function(track) {
     //    SC.oEmbed(track.permalink_url, document.getElementById('player'));
@@ -28,7 +33,7 @@ var getmusicgenre = function(genre) {
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
     		SC.oEmbed(track.permalink_url, document.getElementById('player'));
-      	$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre + "<ul>" + track.permalink_url + "<ul"));
+      	$('#results').append($('<li></li>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
     	});
   	});
 
