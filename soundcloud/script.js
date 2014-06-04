@@ -27,7 +27,7 @@ var getmusicgenre = function(genre) {
     	});
   	});
 
-  $(this).find("input[name='tags']").html('');
+  $("#inputtext").html('');
 
 }
 
