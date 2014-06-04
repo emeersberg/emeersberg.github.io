@@ -12,6 +12,10 @@ $(document).ready(function() {
 		getmusicgenre(genre);
 	});
 
+  $(this).find('#results').nearest('li').click(function() {
+      SC.oEmbed(track.permalink_url);
+  });
+
     //SC.get("/tracks/293",function(track) {
     //    SC.oEmbed(track.permalink_url, document.getElementById('player'));
     //    })
