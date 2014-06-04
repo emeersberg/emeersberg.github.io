@@ -12,7 +12,7 @@ $(document).ready(function() {
 		getmusicgenre(genre);
 	});
 
-  $("button").on("click",function() {
+  $("#inputvalue1").on("click",function() {
       alert($("#inputvalue1").val());
       SC.oEmbed($("#inputvalue1").val(),document.getElementById('player'));
   });
