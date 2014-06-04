@@ -17,7 +17,7 @@ $(document).ready(function() {
       SC.oEmbed($("#inputvalue1").val(),document.getElementById('player'));
   });*/
 
-    $(this).find("#results").on("click",function() {
+    $(this).find("#results").nearest("li").on("click",function() {
       alert($(this).find("#results").nearest("input[type='text']").val());
       SC.oEmbed($(this).find("#results").nearest("input[type='text']").val(),document.getElementById('player'));
     });
