@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 
   $("button").on("click",function() {
-      SC.oEmbed($("button").val());
+      SC.oEmbed($("button").val(),document.getElementById('player'));
   });
 
     //SC.get("/tracks/293",function(track) {
