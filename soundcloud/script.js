@@ -55,7 +55,7 @@ var getTracks = function(genre) {
           else {}
           var artwork;
           artwork = "/soundcloudlogo.jpg"
-          if (track.artwork_url === "") {} else {artwork = track.artwork_url};
+          if (track.artwork_url === null) {} else {artwork = track.artwork_url};
           $('#results').append($('<div></div>').html("<img src=" + artwork + ">" + loopcount + ".) " + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
         SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
