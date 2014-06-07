@@ -37,42 +37,39 @@ var getmusicgenre = function(genre) {
 
   getTracksTest(genre);
 
-  if (loopcount === 200) {
+  if (loopcount >= 200) {
     pagenumber = pagenumber + 1;
     getTracksTest(genre);
   } else {
 
   };
 
-  if (loopcount === 400) {
+  if (loopcount >= 400) {
     pagenumber = pagenumber + 1;
     getTracksTest(genre);
   } else {
 
   };
 
-  if (loopcount === 600) {
+  if (loopcount >= 600) {
     pagenumber = pagenumber + 1;
     getTracksTest(genre);
   } else {
 
   };
-  if (loopcount === 800) {
-    pagenumber = pagenumber + 1;
-    getTracksTest(genre);
-  } else {
-
-  };
-
-  if (loopcount === 1000) {
+  if (loopcount >= 800) {
     pagenumber = pagenumber + 1;
     getTracksTest(genre);
   } else {
 
   };
 
-  alert(pagenumber);
-  alert(loopcount);
+  if (loopcount >= 1000) {
+    pagenumber = pagenumber + 1;
+    getTracksTest(genre);
+  } else {
+
+  };
 
 };
 
@@ -111,6 +108,8 @@ var getTracksTest = function(genre) {
         });
        SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
     });
+  alert(pagenumber);
+  alert(loopcount);
 };
 
 
