@@ -153,20 +153,35 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
           $('#page3').show();
           $('#page4').show();
           $('#page5').show();
+          $('#page1b').hide();
+          $('#page2b').hide();
+          $('#page3b').hide();
+          $('#page4b').hide();
+          $('#page5b').hide();
        } else if (loopcount >=601) {
           $('#page1').show();
           $('#page2').show();
           $('#page3').show();
           $('#page4').show();
+          $('#page1b').hide();
+          $('#page2b').hide();
+          $('#page3b').hide();
+          $('#page4b').hide();
        } else if (loopcount >=401) {
           $('#page1').show();
           $('#page2').show();
           $('#page3').show();
+          $('#page1b').hide();
+          $('#page2b').hide();
+          $('#page3b').hide();
        } else if (loopcount >=201) {
           $('#page1').show();
           $('#page2').show();
+          $('#page1b').hide();
+          $('#page2b').hide();
        } else {
           $('#page1').show();
+          $('#page1b').show();
        }
     });
 
@@ -178,11 +193,11 @@ var hidePages = function() {
     $('#page3').hide();
     $('#page4').hide();
     $('#page5').hide();
-    $('#page1').append("<a href=''>Page One</a>");
-    $('#page2').append("<a href=''>Page Two</a>");
-    $('#page3').append("<a href=''>Page Three</a>");
-    $('#page4').append("<a href=''>Page Four</a>");
-    $('#page5').append("<a href=''>Page Five/a>");
+    $('#page1b').hide();
+    $('#page2b').hide();
+    $('#page3b').hide();
+    $('#page4b').hide();
+    $('#page5b').hide();
 };
 
 
