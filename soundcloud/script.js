@@ -178,11 +178,11 @@ var hidePages = function() {
     $('#page3').hide();
     $('#page4').hide();
     $('#page5').hide();
-    $('#page1').append("<a href="">Page One</a>");
-    $('#page2').append("<a href="">Page Two</a>");
-    $('#page3').append("<a href="">Page Three</a>");
-    $('#page4').append("<a href="">Page Four</a>");
-    $('#page5').append("<a href="">Page Five/a>");
+    $('#page1').append("<a href=''>Page One</a>");
+    $('#page2').append("<a href=''>Page Two</a>");
+    $('#page3').append("<a href=''>Page Three</a>");
+    $('#page4').append("<a href=''>Page Four</a>");
+    $('#page5').append("<a href=''>Page Five/a>");
 };
 
 
