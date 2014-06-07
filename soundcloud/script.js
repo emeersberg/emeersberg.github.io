@@ -42,7 +42,7 @@ var getmusicgenre = function(genre) {
         /*myPara.setAttribute("id", "oembed" + loopcount);*/
         /*SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));*/
       });
-      SC.oEmbed(firsttrack + '&autoplay=1',document.getElementById('player'));
+      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
       alert(loopcount);
     });
 
