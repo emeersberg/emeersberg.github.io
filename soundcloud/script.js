@@ -61,11 +61,6 @@ var getTracks = function(genre) {
 var getTracksTest = function(genre) {
 
   getTracksTest2(genre);
-  if (tempresults > 0) {
-    pagenumber = 2;
-    appendNewPage();
-    getTracksTest2(genre);
-  };
   
 };
 
@@ -75,14 +70,13 @@ var appendNewPage = function() {
 
 var getTracksTest2 = function(genre) {
 
-  tempresults = 0;
 
 SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
+      appendNewPage();
        $(tracks).each(function(index, track) 
         {
           loopcount = loopcount + 1;
-          tempresults = tempresults + 1;
           if (loopcount === 1) 
           {
             firsttrack = track.permalink_url;
@@ -90,7 +84,70 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
           else {}
           $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
-       return tempresults;
+    });
+
+SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+    {
+      pagenumber = 2;
+      appendNewPage();
+       $(tracks).each(function(index, track) 
+        {
+          loopcount = loopcount + 1;
+          if (loopcount === 1) 
+          {
+            firsttrack = track.permalink_url;
+          } 
+          else {}
+          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+        });
+    });
+
+SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+    {
+      pagenumber = 3;
+      appendNewPage();
+       $(tracks).each(function(index, track) 
+        {
+          loopcount = loopcount + 1;
+          if (loopcount === 1) 
+          {
+            firsttrack = track.permalink_url;
+          } 
+          else {}
+          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+        });
+    });
+
+SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+    {
+      pagenumber = 4;
+      appendNewPage();
+       $(tracks).each(function(index, track) 
+        {
+          loopcount = loopcount + 1;
+          if (loopcount === 1) 
+          {
+            firsttrack = track.permalink_url;
+          } 
+          else {}
+          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+        });
+    });
+
+SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+    {
+      pagenumber = 5;
+      appendNewPage();
+       $(tracks).each(function(index, track) 
+        {
+          loopcount = loopcount + 1;
+          if (loopcount === 1) 
+          {
+            firsttrack = track.permalink_url;
+          } 
+          else {}
+          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+        });
     });
 
 }
