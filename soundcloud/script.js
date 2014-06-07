@@ -58,8 +58,6 @@ var getTracks = function(genre) {
 
 var getTracksTest = function(genre) {
 
-  $('#results').append($('<div id="page' + pagenumber + '"' + '></div>').html(''));
-
   SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
        $(tracks).each(function(index, track) 
@@ -70,21 +68,22 @@ var getTracksTest = function(genre) {
             firsttrack = track.permalink_url;
           } 
           else {}
+
           if (loopcount <= 50) 
           {
-            pagenumber = pagenumber + 1;
+            appendNewPage();
           } 
           else if (loopcount <= 100) 
           {
-            pagenumber = pagenumber + 1;
+            appendNewPage();
           }
           else if (loopcount <= 150) 
           {
-            pagenumber = pagenumber + 1;
+            appendNewPage();
           }
           else 
           {
-            pagenumber = pagenumber + 1;
+            appendNewPage();
           }
           $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
@@ -92,6 +91,11 @@ var getTracksTest = function(genre) {
        alert(pagenumber);
        alert(loopcount);
     });
+};
+
+var appendNewPage = function() {
+  pagenumber = pagenumber + 1;
+  $('#results').append($('<div id="page' + pagenumber + '"' + '></div>').html(''));
 };
 
 
