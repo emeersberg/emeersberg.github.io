@@ -5,6 +5,7 @@ SC.initialize({
 var loopcount;
 var firsttrack;
 var pagenumber;
+var tempresults;
 
 $(document).ready(function() {
 
@@ -34,6 +35,7 @@ var getmusicgenre = function(genre) {
   loopcount = 0;
   firsttrack = "";
   pagenumber = 1;
+  tempresults = 0;
 
   getTracksTest(genre);
 
@@ -58,44 +60,39 @@ var getTracks = function(genre) {
 
 var getTracksTest = function(genre) {
 
-  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+  getTracksTest2(genre);
+  if (tempresults > 0) {
+    pagenumber = 2;
+    appendNewPage();
+    getTracksTest2(genre);
+  };
+  
+};
+
+var appendNewPage = function() {
+  $('#results').append($('<div id="page' + pagenumber + '"' + '></div>').html(''));
+};
+
+var getTracksTest2 = function(genre) {
+
+  tempresults = 0;
+
+SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
        $(tracks).each(function(index, track) 
         {
           loopcount = loopcount + 1;
+          tempresults = tempresults + 1;
           if (loopcount === 1) 
           {
             firsttrack = track.permalink_url;
           } 
           else {}
-
-          if (loopcount <= 50) 
-          {
-            appendNewPage();
-          } 
-          else if (loopcount <= 100) 
-          {
-            appendNewPage();
-          }
-          else if (loopcount <= 150) 
-          {
-            appendNewPage();
-          }
-          else 
-          {
-            appendNewPage();
-          }
           $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
-       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-       alert(pagenumber);
-       alert(loopcount);
+       return tempresults;
     });
-};
 
-var appendNewPage = function() {
-  pagenumber = pagenumber + 1;
-  $('#results').append($('<div id="page' + pagenumber + '"' + '></div>').html(''));
-};
+}
 
 
