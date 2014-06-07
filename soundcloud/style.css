@@ -37,6 +37,7 @@ body {
 	position: fixed;
 	height: 200;
 	width: 100%;
+	display: inline-block;
 }
 
 iframe {
