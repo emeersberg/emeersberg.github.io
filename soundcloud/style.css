@@ -27,8 +27,12 @@ body {
 	width: 750px;
 }
 
+.header {
+	position: fixed;
+}
+
 iframe {
-	width: 50%;
+	width: 100%;
 	height: 200;
 }
 
