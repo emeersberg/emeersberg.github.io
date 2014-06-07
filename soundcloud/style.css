@@ -21,11 +21,16 @@ body {
 	width: 900px;
 }
 
+#player {
+	width: 100%;
+}
+
 .content { 
 	height: 700px;
 	margin: 0 auto;
 	display: block;
 	width: 750px;
+	background-color: white;
 }
 
 .header {
