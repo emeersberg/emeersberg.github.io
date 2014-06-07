@@ -34,15 +34,6 @@ var getmusicgenre = function(genre) {
   firsttrack = "";
 
   getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
 
 }
 
