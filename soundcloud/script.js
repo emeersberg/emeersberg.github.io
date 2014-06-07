@@ -11,7 +11,12 @@ $(document).ready(function() {
 
   $('.music-genre').submit( function(event){
     // zero out results if previous search has run
-    $('#results').html('');
+    /*$('#results').html('');*/
+    $('#page1').html('');
+    $('#page2').html('');
+    $('#page3').html('');
+    $('#page4').html('');
+    $('#page5').html('');
     // get the value of the tags the user submitted
     var genre = $(this).find("input[name='tags']").val();
     getmusicgenre(genre);
