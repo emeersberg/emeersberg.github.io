@@ -46,7 +46,7 @@ var getmusicgenre = function(genre) {
         /*SC.oEmbed(track.permalink_url, document.getElementById('player'));*/
         /*var myPara = document.createElement("div");*/
         $('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
-        $('#player').append($('<div></div>').html("<p>hello</p>"));
+        $('#player').append($('<div></div>').html("<iframe></iframe>"));
         /*myPara.setAttribute("id", "oembed" + loopcount);*/
         /*SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));*/
       });
