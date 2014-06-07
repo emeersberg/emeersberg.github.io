@@ -73,7 +73,6 @@ var getTracksTest2 = function(genre) {
 
 SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
-      appendNewPage();
        $(tracks).each(function(index, track) 
         {
           loopcount = loopcount + 1;
@@ -82,14 +81,12 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
             firsttrack = track.permalink_url;
           } 
           else {}
-          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+          $('#page1').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
     });
 
 SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
-      pagenumber = 2;
-      appendNewPage();
        $(tracks).each(function(index, track) 
         {
           loopcount = loopcount + 1;
@@ -98,14 +95,12 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
             firsttrack = track.permalink_url;
           } 
           else {}
-          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+          $('#page2').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
     });
 
 SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
-      pagenumber = 3;
-      appendNewPage();
        $(tracks).each(function(index, track) 
         {
           loopcount = loopcount + 1;
@@ -114,14 +109,12 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
             firsttrack = track.permalink_url;
           } 
           else {}
-          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+          $('#page3').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
     });
 
 SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
-      pagenumber = 4;
-      appendNewPage();
        $(tracks).each(function(index, track) 
         {
           loopcount = loopcount + 1;
@@ -130,14 +123,12 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
             firsttrack = track.permalink_url;
           } 
           else {}
-          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+          $('#page4').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
     });
 
 SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
-      pagenumber = 5;
-      appendNewPage();
        $(tracks).each(function(index, track) 
         {
           loopcount = loopcount + 1;
@@ -146,8 +137,9 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
             firsttrack = track.permalink_url;
           } 
           else {}
-          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+          $('#page5').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
+       alert(loopcount);
     });
 
 }
