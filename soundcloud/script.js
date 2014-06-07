@@ -2,6 +2,8 @@ SC.initialize({
   client_id: 'e9cc713d5d9719ed8b06e42beff3c38c'
 });
 
+var loopcount;
+
 $(document).ready(function() {
 
 	$('.music-genre').submit( function(event){
@@ -36,11 +38,16 @@ $(document).ready(function() {
 
 var getmusicgenre = function(genre) {
 	
+  loopcount = 0;
+
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
-    		SC.oEmbed(track.permalink_url, document.getElementById('player'));
+        loopcount = loopcount + 1;
+    		/SC.oEmbed(track.permalink_url, document.getElementById('player'));/
+        var myPara = document.createElement("div");
       	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
-        $('#player').append($('<div></div>').SC.oEmbed(track.permalink_url);
+        myPara.setAttribute("id", "oembed" + loopcount);
+        SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));
     	});
   	});
 
