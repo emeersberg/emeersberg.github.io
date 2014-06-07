@@ -40,10 +40,6 @@ body {
 	display: inline-block;
 }
 
-iframe {
-	height: 100;
-}
-
 #results > div > img {
 	width: 75px;
 	height: 75px;	
