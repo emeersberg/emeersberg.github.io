@@ -46,6 +46,7 @@ var getmusicgenre = function(genre) {
     		SC.oEmbed(track.permalink_url, document.getElementById('player'));
         var myPara = document.createElement("div");
       	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
+        $('#player').append($('<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=' & track.permalink_url,& '&amp;show_artwork=true"></iframe>');
         myPara.setAttribute("id", "oembed" + loopcount);
         /*SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));*/
     	});
