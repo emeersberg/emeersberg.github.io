@@ -24,16 +24,6 @@ $(document).ready(function() {
      SC.oEmbed(test,document.getElementById('player'));
     });
 
-
-    //$(this).find("a").on("click",function() {
-    //  alert($(this).find("#results").nearest("input[type='text']").val());
-      //SC.oEmbed($(this).find("#results").nearest("input[type='text']").val(),document.getElementById('player'));
-    //});
-
-    //SC.get("/tracks/293",function(track) {
-    //    SC.oEmbed(track.permalink_url, document.getElementById('player'));
-    //    })
-
 });
 
 var getmusicgenre = function(genre) {
@@ -52,7 +42,7 @@ var getmusicgenre = function(genre) {
         /*myPara.setAttribute("id", "oembed" + loopcount);*/
         /*SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));*/
       });
-      SC.oEmbed(firsttrack,document.getElementById('player'));
+      SC.oEmbed(firsttrack + '&autoplay=1',document.getElementById('player'));
       alert(loopcount);
     });
 
