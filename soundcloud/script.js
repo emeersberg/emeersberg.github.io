@@ -35,21 +35,11 @@ var getmusicgenre = function(genre) {
   pagenumber = 1;
 
   getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
-  getTracks1();
 
 }
 
 var getTracks1 = function() {
 
-      $('#results').append($('<div id=page' + pagenumber + '></div>').html());
       SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
@@ -58,4 +48,5 @@ var getTracks1 = function() {
       });
       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
 
+  }
 }
