@@ -37,8 +37,7 @@ var getmusicgenre = function(genre) {
 
   SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
   {
-
-      $(tracks).each(function(index, track) 
+     $(tracks).each(function(index, track) 
       {
         loopcount = loopcount + 1;
         if (loopcount === 1) 
@@ -48,8 +47,6 @@ var getmusicgenre = function(genre) {
         else {}
         $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
       });
-
       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-
-  }
+  });
 };
