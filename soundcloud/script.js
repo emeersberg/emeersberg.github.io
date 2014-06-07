@@ -35,7 +35,7 @@ var getmusicgenre = function(genre) {
   firsttrack = "";
   pagenumber = 1;
 
-  getTracks(genre);
+  getTracksTest(genre);
 
   
 };
@@ -54,5 +54,25 @@ var getTracks = function(genre) {
           $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
         SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
+    });
+};
+
+var getTracksTest = function(genre) {
+
+  $('#results').append($('<div id="page' + pagenumber + '></div>').html(''));
+
+  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+    {
+       $(tracks).each(function(index, track) 
+        {
+          loopcount = loopcount + 1;
+          if (loopcount === 1) 
+          {
+            firsttrack = track.permalink_url;
+          } 
+          else {}
+          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+        });
+       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
     });
 };
