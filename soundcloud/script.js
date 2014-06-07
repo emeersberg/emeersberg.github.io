@@ -6,13 +6,13 @@ var loopcount;
 
 $(document).ready(function() {
 
-	$('.music-genre').submit( function(event){
-		// zero out results if previous search has run
-		$('.results').html('');
-		// get the value of the tags the user submitted
-		var genre = $(this).find("input[name='tags']").val();
-		getmusicgenre(genre);
-	});
+  $('.music-genre').submit( function(event){
+    // zero out results if previous search has run
+    $('.results').html('');
+    // get the value of the tags the user submitted
+    var genre = $(this).find("input[name='tags']").val();
+    getmusicgenre(genre);
+  });
 
   /*$("button").on("click",function() {
       alert($("#inputvalue1").val());
@@ -37,22 +37,21 @@ $(document).ready(function() {
 });
 
 var getmusicgenre = function(genre) {
-	
+  
   loopcount = 0;
 
-	SC.get('/tracks', { genres: genre }, function(tracks) {
-    	$(tracks).each(function(index, track) {
+  SC.get('/tracks', { genres: genre }, function(tracks) {
+      $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
-    		SC.oEmbed(track.permalink_url, document.getElementById('player'));
+        SC.oEmbed(track.permalink_url, document.getElementById('player'));
         var myPara = document.createElement("div");
-      	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
+        $('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
         $('#player').append($('<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=' & track.permalink_url,& '&amp;show_artwork=true"></iframe>');
         myPara.setAttribute("id", "oembed" + loopcount);
         /*SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));*/
-    	});
-  	});
+      });
+    });
 
   $("#inputtext").html('');
 
 }
-
