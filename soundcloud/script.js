@@ -32,19 +32,30 @@ var getmusicgenre = function(genre) {
   
   loopcount = 0;
   firsttrack = "";
+  pagenumber = 1;
 
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
   getTracks1();
 
 }
 
 var getTracks1 = function() {
 
-    SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
+      $('#results').append($('<div id=page' + pagenumber + '></div>').html());
+      SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
         if (loopcount === 1) {firsttrack = track.permalink_url} else {};
         $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
       });
-      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));loopcount);
-    };
+      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
+
 }
