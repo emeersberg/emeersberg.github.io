@@ -35,12 +35,12 @@ var getmusicgenre = function(genre) {
   firsttrack = "";
   pagenumber = 1;
 
-  getTracks();
+  getTracks(genre);
 
   
 };
 
-var getTracks = function() {
+var getTracks = function(genre) {
   SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
        $(tracks).each(function(index, track) 
