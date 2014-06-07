@@ -3,12 +3,14 @@ SC.initialize({
 });
 
 var loopcount;
+var firsttrack;
+var pagenumber;
 
 $(document).ready(function() {
 
   $('.music-genre').submit( function(event){
     // zero out results if previous search has run
-    $('.results').html('');
+    $('#results').html('');
     // get the value of the tags the user submitted
     var genre = $(this).find("input[name='tags']").val();
     getmusicgenre(genre);
@@ -29,27 +31,43 @@ $(document).ready(function() {
 var getmusicgenre = function(genre) {
   
   loopcount = 0;
-  var firsttrack = "";
+  firsttrack = "";
+  pagenumber = 1;
 
-  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+  getTracks1();
+
+}
+
+var getTracks1 = function() {
+
+    if(pagenumber === 1) {
+      $('#results').append($('<div id=page' + pagenumber + '></div>').html());
+      SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
         if (loopcount === 1) {firsttrack = track.permalink_url} else {};
-        $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
+        $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
       });
       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-    });
-
-  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
+    });  
+    } 
+    else {
+      $('#results').append($('<div id=page' + pagenumber + '></div>').html());
+      SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
         if (loopcount === 1) {firsttrack = track.permalink_url} else {};
-        $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
+        $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
       });
-      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-    });
-  
-
-  $("#inputtext").html('');
-
+      alert(loopcount);
+    };
 }
