@@ -27,7 +27,7 @@ body {
 }
 
 .content { 
-	height: 700px;
+	height: 100%;
 	margin: 0 auto;
 	display: block;
 	width: 750px;
@@ -37,6 +37,7 @@ body {
 .header {
 	position: fixed;
 	height: 200;
+	width: 100%;
 }
 
 iframe {
