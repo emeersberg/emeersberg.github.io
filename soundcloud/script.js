@@ -75,6 +75,7 @@ var appendNewPage = function() {
 
 var getTracksTest2 = function(genre) {
 
+hidePages();
 
 SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
@@ -145,8 +146,37 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
           $('#page5').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
        alert(loopcount);
+       if (loopcount >=801) {
+          $('#page1').show();
+          $('#page2').show();
+          $('#page3').show();
+          $('#page4').show();
+          $('#page5').show();
+       } else if (>=601) {
+          $('#page1').show();
+          $('#page2').show();
+          $('#page3').show();
+          $('#page4').show();
+       } else if (>=401) {
+          $('#page1').show();
+          $('#page2').show();
+          $('#page3').show();
+       } else if (>=201) {
+          $('#page1').show();
+          $('#page2').show();
+       } else {
+          $('#page1').show();
+       };
     });
 
 }
+
+var hidePages = function() {
+    $('#page1').hide();
+    $('#page2').hide();
+    $('#page3').hide();
+    $('#page4').hide();
+    $('#page5').hide();
+};
 
 
