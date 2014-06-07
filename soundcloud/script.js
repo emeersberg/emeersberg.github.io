@@ -32,7 +32,6 @@ var getmusicgenre = function(genre) {
   
   loopcount = 0;
   firsttrack = "";
-  pagenumber = 1;
 
   getTracks1();
   getTracks1();
@@ -49,25 +48,12 @@ var getmusicgenre = function(genre) {
 
 var getTracks1 = function() {
 
-    if(pagenumber === 1) {
-      $('#results').append($('<div id=page' + pagenumber + '></div>').html());
-      SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
+    SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
         if (loopcount === 1) {firsttrack = track.permalink_url} else {};
-        $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+        $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
       });
-      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-    });  
-    } 
-    else {
-      $('#results').append($('<div id=page' + pagenumber + '></div>').html());
-      SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
-      $(tracks).each(function(index, track) {
-        loopcount = loopcount + 1;
-        if (loopcount === 1) {firsttrack = track.permalink_url} else {};
-        $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-      });
-      alert(loopcount);
+      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));loopcount);
     };
 }
