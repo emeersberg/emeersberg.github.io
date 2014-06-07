@@ -21,7 +21,7 @@ $(document).ready(function() {
 
   $(this).find("div").on("click","div",function() {
      var test = $(this).find("input[type='text']").val();
-     SC.oEmbed(test,document.getElementById('player'));
+     SC.oEmbed(test + '&auto_play=true',document.getElementById('player'));
     });
 
 });
