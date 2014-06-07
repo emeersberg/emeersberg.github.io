@@ -59,7 +59,7 @@ var getTracks = function(genre) {
 
 var getTracksTest = function(genre) {
 
-  $('#results').append($('<div id="page' + pagenumber + '></div>').html(''));
+  $('#results').append($('<div id="page"' + pagenumber + '></div>').html(''));
 
   SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
     {
