@@ -35,41 +35,8 @@ var getmusicgenre = function(genre) {
   firsttrack = "";
   pagenumber = 1;
 
-  getTracksTest(genre);
+  getTracks(genre);
 
-  if (loopcount >= 200) {
-    pagenumber = pagenumber + 1;
-    getTracksTest(genre);
-  } else {
-
-  };
-
-  if (loopcount >= 400) {
-    pagenumber = pagenumber + 1;
-    getTracksTest(genre);
-  } else {
-
-  };
-
-  if (loopcount >= 600) {
-    pagenumber = pagenumber + 1;
-    getTracksTest(genre);
-  } else {
-
-  };
-  if (loopcount >= 800) {
-    pagenumber = pagenumber + 1;
-    getTracksTest(genre);
-  } else {
-
-  };
-
-  if (loopcount >= 1000) {
-    pagenumber = pagenumber + 1;
-    getTracksTest(genre);
-  } else {
-
-  };
 
 };
 
@@ -89,27 +56,4 @@ var getTracks = function(genre) {
         SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
     });
 };
-
-var getTracksTest = function(genre) {
-
-  $('#results').append($('<div id="page' + pagenumber + '"' + '></div>').html(''));
-
-  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
-    {
-       $(tracks).each(function(index, track) 
-        {
-          loopcount = loopcount + 1;
-          if (loopcount === 1) 
-          {
-            firsttrack = track.permalink_url;
-          } 
-          else {}
-          $('#page' + pagenumber).append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-        });
-       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-    });
-  alert(pagenumber);
-  alert(loopcount);
-};
-
 
