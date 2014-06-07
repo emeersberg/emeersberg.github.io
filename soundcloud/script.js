@@ -12,11 +12,7 @@ $(document).ready(function() {
   $('.music-genre').submit( function(event){
     // zero out results if previous search has run
     /*$('#results').html('');*/
-    $('#page1').html('');
-    $('#page2').html('');
-    $('#page3').html('');
-    $('#page4').html('');
-    $('#page5').html('');
+    $('#results').html('');
     // get the value of the tags the user submitted
     var genre = $(this).find("input[name='tags']").val();
     getmusicgenre(genre);
@@ -42,12 +38,12 @@ var getmusicgenre = function(genre) {
   pagenumber = 1;
   tempresults = 0;
 
-  getTracksTest(genre);
+  getTracks(genre);
 
 };
 
 var getTracks = function(genre) {
-  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+  SC.get('/tracks', { genres: genre, limit: 400 }, function(tracks) 
     {
        $(tracks).each(function(index, track) 
         {
@@ -62,142 +58,3 @@ var getTracks = function(genre) {
         SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
     });
 };
-
-var getTracksTest = function(genre) {
-
-  getTracksTest2(genre);
-  
-};
-
-var appendNewPage = function() {
-  $('#results').append($('<div id="page' + pagenumber + '"' + '></div>').html(''));
-};
-
-var getTracksTest2 = function(genre) {
-
-hidePages();
-
-SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
-    {
-       $(tracks).each(function(index, track) 
-        {
-          loopcount = loopcount + 1;
-          if (loopcount === 1) 
-          {
-            firsttrack = track.permalink_url;
-          } 
-          else {}
-          $('#page1').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-        });
-    });
-
-SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
-    {
-       $(tracks).each(function(index, track) 
-        {
-          loopcount = loopcount + 1;
-          if (loopcount === 1) 
-          {
-            firsttrack = track.permalink_url;
-          } 
-          else {}
-          $('#page2').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-        });
-    });
-
-SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
-    {
-       $(tracks).each(function(index, track) 
-        {
-          loopcount = loopcount + 1;
-          if (loopcount === 1) 
-          {
-            firsttrack = track.permalink_url;
-          } 
-          else {}
-          $('#page3').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-        });
-    });
-
-SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
-    {
-       $(tracks).each(function(index, track) 
-        {
-          loopcount = loopcount + 1;
-          if (loopcount === 1) 
-          {
-            firsttrack = track.permalink_url;
-          } 
-          else {}
-          $('#page4').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-        });
-    });
-
-SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
-    {
-       $(tracks).each(function(index, track) 
-        {
-          loopcount = loopcount + 1;
-          if (loopcount === 1) 
-          {
-            firsttrack = track.permalink_url;
-          } 
-          else {}
-          $('#page5').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-        });
-       alert(loopcount);
-       if (loopcount >=801) {
-
-          $('#page1').show();
-          $('#page2').show();
-          $('#page3').show();
-          $('#page4').show();
-          $('#page5').show();
-          $('#page1b').hide();
-          $('#page2b').hide();
-          $('#page3b').hide();
-          $('#page4b').hide();
-          $('#page5b').hide();
-       } else if (loopcount >=601) {
-          $('#page1').show();
-          $('#page2').show();
-          $('#page3').show();
-          $('#page4').show();
-          $('#page1b').hide();
-          $('#page2b').hide();
-          $('#page3b').hide();
-          $('#page4b').hide();
-       } else if (loopcount >=401) {
-          $('#page1').show();
-          $('#page2').show();
-          $('#page3').show();
-          $('#page1b').hide();
-          $('#page2b').hide();
-          $('#page3b').hide();
-       } else if (loopcount >=201) {
-          $('#page1').show();
-          $('#page2').show();
-          $('#page1b').hide();
-          $('#page2b').hide();
-       } else {
-          $('#page1').show();
-          $('#page1b').show();
-       }
-    });
-
-};
-
-var hidePages = function() {
-    $('#page1').hide();
-    $('#page2').hide();
-    $('#page3').hide();
-    $('#page4').hide();
-    $('#page5').hide();
-    $('#page1b').hide();
-    $('#page2b').hide();
-    $('#page3b').hide();
-    $('#page4b').hide();
-    $('#page5b').hide();
-};
-
-
