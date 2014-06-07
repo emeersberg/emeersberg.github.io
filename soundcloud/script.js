@@ -152,24 +152,24 @@ SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks)
           $('#page3').show();
           $('#page4').show();
           $('#page5').show();
-       } else if (>=601) {
+       } else if (loopcount >=601) {
           $('#page1').show();
           $('#page2').show();
           $('#page3').show();
           $('#page4').show();
-       } else if (>=401) {
+       } else if (loopcount >=401) {
           $('#page1').show();
           $('#page2').show();
           $('#page3').show();
-       } else if (>=201) {
+       } else if (loopcount >=201) {
           $('#page1').show();
           $('#page2').show();
        } else {
           $('#page1').show();
-       };
+       }
     });
 
-}
+};
 
 var hidePages = function() {
     $('#page1').hide();
