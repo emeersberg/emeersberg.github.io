@@ -35,18 +35,22 @@ var getmusicgenre = function(genre) {
   firsttrack = "";
   pagenumber = 1;
 
+  
+};
+
+var getTracks = function() {
   SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
-  {
-     $(tracks).each(function(index, track) 
-      {
-        loopcount = loopcount + 1;
-        if (loopcount === 1) 
+    {
+       $(tracks).each(function(index, track) 
         {
-          firsttrack = track.permalink_url;
-        } 
-        else {}
-        $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
-      });
-      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-  });
+          loopcount = loopcount + 1;
+          if (loopcount === 1) 
+          {
+            firsttrack = track.permalink_url;
+          } 
+          else {}
+          $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+        });
+        SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
+    });
 };
