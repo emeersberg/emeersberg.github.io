@@ -71,7 +71,9 @@ var getmusicgenre = function(genre) {
 
   };
 
-  
+  alert(pagenumber);
+  alert(loopcount);
+
 };
 
 var getTracks = function(genre) {
