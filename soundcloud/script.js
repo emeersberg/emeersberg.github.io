@@ -53,7 +53,7 @@ var getTracks = function(genre) {
             firsttrack = track.permalink_url;
           } 
           else {}
-          $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+          $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + loopcount + ".) " + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
         SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
     });
