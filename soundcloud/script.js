@@ -53,7 +53,10 @@ var getTracks = function(genre) {
             firsttrack = track.permalink_url;
           } 
           else {}
-          $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + loopcount + ".) " + track.title + "<input type='text' value=" + track.permalink_url + ">"));
+          var artwork;
+          artwork = "/soundcloudlogo.jpg"
+          if (track.artwork_url === "") {} else {artwork = track.artwork_url};
+          $('#results').append($('<div></div>').html("<img src=" + artwork + ">" + loopcount + ".) " + track.title + "<input type='text' value=" + track.permalink_url + ">"));
         });
         SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
     });
