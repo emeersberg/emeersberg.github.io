@@ -43,11 +43,11 @@ var getmusicgenre = function(genre) {
 	SC.get('/tracks', { genres: genre }, function(tracks) {
     	$(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
-    		/SC.oEmbed(track.permalink_url, document.getElementById('player'));/
+    		SC.oEmbed(track.permalink_url, document.getElementById('player'));
         var myPara = document.createElement("div");
       	$('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
-        myPara.setAttribute("id", "oembed" + loopcount);
-        SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));
+        /myPara.setAttribute("id", "oembed" + loopcount);/
+        /SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));/
     	});
   	});
 
