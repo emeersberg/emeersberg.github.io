@@ -44,10 +44,10 @@ var getmusicgenre = function(genre) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
         SC.oEmbed(track.permalink_url, document.getElementById('player'));
-        var myPara = document.createElement("div");
+        /*var myPara = document.createElement("div");*/
         $('#results').append($('<div></div>').html(track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
         $('#player').append($('<iframe></iframe>');
-        myPara.setAttribute("id", "oembed" + loopcount);
+        /*myPara.setAttribute("id", "oembed" + loopcount);*/
         /*SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));*/
       });
     });
