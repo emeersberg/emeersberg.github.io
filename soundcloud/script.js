@@ -35,6 +35,8 @@ var getmusicgenre = function(genre) {
   firsttrack = "";
   pagenumber = 1;
 
+  getTracks();
+
   
 };
 
