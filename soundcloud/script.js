@@ -35,17 +35,19 @@ var getmusicgenre = function(genre) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
         if (loopcount === 1) {firsttrack = track.permalink_url} else {};
-        /*SC.oEmbed(track.permalink_url, document.getElementById('player'));*/
-        /*var myPara = document.createElement("div");*/
         $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
-        /*$('#player').append($('<div></div>').html('<iframe src="https://w.soundcloud.com/player/?visual=true&amp;url=' + track.permalink_url + '&amp;show_artwork=true"></iframe>'));*/
-        /*myPara.setAttribute("id", "oembed" + loopcount);*/
-        /*SC.oEmbed(track.permalink_url, document.getElementById("oembed" + loopcount));*/
       });
       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
-      alert(loopcount);
     });
 
+  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
+      $(tracks).each(function(index, track) {
+        loopcount = loopcount + 1;
+        if (loopcount === 1) {firsttrack = track.permalink_url} else {};
+        $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + ' - ' + track.genre + "<input type='text' value=" + track.permalink_url + ">"));
+      });
+      SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
+    });
   
 
   $("#inputtext").html('');
