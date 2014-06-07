@@ -21,7 +21,8 @@ $(document).ready(function() {
       SC.oEmbed($("#inputvalue1").val(),document.getElementById('player'));
   });*/
 
-  $(this).find("div").on("click","div",function() {
+  $(this).find("div").on("click","div",function() 
+  {
      var test = $(this).find("input[type='text']").val();
      SC.oEmbed(test + '&auto_play=true',document.getElementById('player'));
     });
@@ -34,19 +35,21 @@ var getmusicgenre = function(genre) {
   firsttrack = "";
   pagenumber = 1;
 
-  getTracks1();
+  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) 
+  {
 
-}
-
-var getTracks1 = function() {
-
-      SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
-      $(tracks).each(function(index, track) {
+      $(tracks).each(function(index, track) 
+      {
         loopcount = loopcount + 1;
-        if (loopcount === 1) {firsttrack = track.permalink_url} else {};
+        if (loopcount === 1) 
+        {
+          firsttrack = track.permalink_url;
+        } 
+        else {}
         $('#results').append($('<div></div>').html("<img src=" + track.artwork_url + ">" + track.title + "<input type='text' value=" + track.permalink_url + ">"));
       });
+
       SC.oEmbed(firsttrack + '&auto_play=true',document.getElementById('player'));
 
   }
-}
+};
