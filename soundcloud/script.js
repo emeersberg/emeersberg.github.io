@@ -40,7 +40,7 @@ var getmusicgenre = function(genre) {
   
   loopcount = 0;
 
-  SC.get('/tracks', { genres: genre }, function(tracks) {
+  SC.get('/tracks', { genres: genre, limit: 200 }, function(tracks) {
       $(tracks).each(function(index, track) {
         loopcount = loopcount + 1;
         /*SC.oEmbed(track.permalink_url, document.getElementById('player'));*/
