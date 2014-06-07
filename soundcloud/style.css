@@ -12,7 +12,7 @@ iframe {
 	height: 200;
 }
 
-#results > input[type="text"] {
+#results > div > input[type="text"] {
 	display: none;
 }
 
@@ -113,9 +113,6 @@ h1, h2 {
 	letter-spacing: 3px;
 }
 
-img {
-	width: 300px;
-}
 .start_quiz, .yes, .no {
 	padding: 25px;
 	text-align: center;
