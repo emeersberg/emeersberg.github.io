@@ -27,9 +27,8 @@ body {
 }
 
 .content { 
-	height: 100%;
+	display: inline-block;
 	margin: 0 auto;
-	display: block;
 	width: 750px;
 	background-color: white;
 }
