@@ -1,0 +1,184 @@
+/* CSS Reset:
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+} 
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*My google styling: */
+
+body {
+	font-family: sans-serif;
+	font-size: 13px;
+}
+#nav_1 {
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	list-style: none;
+	margin: 17px 24px 3em 0;
+	text-align: center;
+}
+#nav_1 li {
+	float: left;
+}
+#nav_1 li a {
+	color: #444444;
+	display: block;
+	height: 30px;
+	margin: 0 8px;
+	text-decoration: none;
+}
+#nav_1 img {
+	display: table-cell;
+	height: 22.5px;
+	margin-top: 3px;
+	padding: 0px;
+	width: 22.5px;
+}
+#nav_1 li a img:hover {
+	cursor: default;
+	text-decoration: none;
+}
+#nav_1 #sign_in a {
+	background-color: #4386FA;
+	border-radius: 3px;
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	width: 70px;
+}
+#nav_1 #sign_in a:hover {
+	box-shadow: 0 1px 1px lightgray;
+	cursor: default;
+	text-decoration: none;
+}
+#nav_1 #sign_in a:active {
+	background-color: #3275DA;
+}
+form {
+	margin: 0 auto;
+	text-align: center;
+}
+#nav_1 a:hover {
+	text-decoration: underline;
+}
+#nav_1 a:visited {
+	color: #444444;
+}
+form {
+	margin: auto;
+	padding: 190px 200px;
+	width: 600px;
+}
+form a {
+	background-color: #F4F4F4;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	color: #444444;
+	display: inline-block;
+	font-family: sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0 7px;
+	padding: 8px;
+	text-decoration: none;
+}
+form a:hover {
+	box-shadow: 0 1px 1px lightgray;
+	color: black;
+	cursor: default;
+	text-decoration: none;
+}
+input[type=text] {
+	background: url('images/microphone.PNG') no-repeat right;
+	background-size: 25px 25px;
+	border: 1px solid lightgray;
+	font-size: 16px;
+	height: 28px;
+	margin: 20px 0px;
+	outline: 0px;
+	padding: 0px 25px 0px 9px;
+	width: 535px;
+}
+input[type=text]:focus {
+	border-color: #4285F4;
+}
+#google_logo img {
+	height: 95px;
+}
+#footer {
+	background-color: #F4F4F4;
+	border: 1px solid lightgray;
+	bottom: 0;
+	height: 40px;
+	position: fixed;
+	width: 100%;
+}
+#footer a {
+	color: #666666;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 15px;
+	overflow: hidden;
+	text-decoration: none;
+	vertical-align: middle;
+}
+#footer a:hover {
+	text-decoration: underline;
+}
+#footer a:active {
+	color: red;
+}
+#footer a:visited {
+	color: #666666;
+}
+#nav_2 {
+	float: left;
+	margin-left: 20px;
+}
+#nav_3 {
+	float: right;
+	margin-right: 20px;
+}
