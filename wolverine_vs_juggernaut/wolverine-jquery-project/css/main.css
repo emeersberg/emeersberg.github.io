@@ -1,0 +1,402 @@
+body {
+	background-color: #404040;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.main {
+	position: absolute;
+	background-color: #F4F4F4;
+	margin-top: 110px;
+	padding-left: 200px;
+	min-width: 1300px;
+	height: 500px;
+}
+
+.header {
+	position: absolute;
+	top: 0px;
+	margin-top: 20px;
+	width: 659px;
+	letter-spacing: 6px;
+	font-weight: bold;
+	color: #EFC434;
+	background-color: #2157BF;
+	border-radius: 15px;
+	font-size: 40px;
+	padding: 5px;
+	text-align: center;
+}
+
+.header2 {
+	font-style:italic;
+	position: absolute;
+	top: 60px;
+	margin-top: 20px;
+	width: 659px;
+	letter-spacing: 4px;
+	font-weight: bold;
+	color: red;
+	font-size: 25px;
+	padding: 5px;
+	text-align: center;
+}
+
+/*.display-move {
+	position: relative;
+	top: 0px;
+	width: 659px;
+	font-family: Helvetica, Arial, sans-serif;
+	letter-spacing: 8px;
+	font-weight: bold;
+	color: red;
+	font-size: 25px;
+	text-align: center;
+}*/
+
+.wolvie-crouchblock, .wolvie-stand {
+	position: absolute;
+	top: 150px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 300px;
+	background-size: 250px 250px;
+}
+
+.wolv-c1 {
+	position: absolute;
+	top: -130px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 650px;
+	background-size: 650px 650px;
+
+}
+
+.wolv-hp {
+	position: absolute;
+	left: 0px;
+	top: -70px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 450px;
+	background-size: 600px 450px;
+}
+
+.wolvie-dashing {
+	position: absolute;
+	left: 140px;
+	top: -30px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 550px;
+	background-size: 550px 450px;
+}
+
+.wolvie-drillclaw  {
+	position: absolute;
+	left: 140px;
+	top: -70px;
+	width: 659px;
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: 500px 500px;
+}
+
+ .wolvie-standingattacks {
+	position: absolute;
+	left: 140px;
+	top: -100px;
+	width: 659px;
+	height: 600px;
+	background-repeat: no-repeat;
+	background-size: 550px 550px;
+}
+
+ .wolvie-tnt, .wolvie-timeout {
+	position: absolute;
+	top: 100px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 300px;
+	background-size: 300px 300px;
+}
+
+.wolvie-wins2 {
+	position: absolute;
+	top: 20px;
+	left: -40px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 380px;
+	background-size: 380px 380px;
+}
+
+.juggernaut-stand {
+	position: absolute;
+	right: 200px;
+	top: 100px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 300px;
+	background-size: 300px 300px;
+}
+
+.juggernaut-taunt {
+	position: absolute;
+	right: 230px;
+	top: 30px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 370px;
+	background-size: 370px 370px;
+}
+
+.juggernaut-crazy {
+	position: absolute;
+	right: 230px;
+	top: -50px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 470px;
+	background-size: 470px 470px;
+}
+
+.juggernaut-dive{
+	position: absolute;
+	right: 230px;
+	top: -50px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 470px;
+	background-size: 470px 470px;
+}
+
+.juggernaut-earth {
+	position: absolute;
+	right: 230px;
+	top: -50px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 470px;
+	background-size: 470px 470px;
+}
+
+.juggernaut-dash {
+	position: absolute;
+	right: 400px;
+	top: -30px;
+	background-repeat: no-repeat;
+	width: 659px;
+	height: 480px;
+	background-size: 480px 480px;
+}
+
+
+.juggernaut-taunt , .juggernaut-crazy, .juggernaut-dive, .juggernaut-earth, .juggernaut-dash{
+	display: none;
+}
+
+.wolverine {
+	width: 700px;
+	height: 700px;
+}
+
+.juggernaut {
+	width: 700px;
+	height: 700px;
+}
+
+.juggernaut-stand {
+	background-image: url('../images/juggernaut.gif');
+}
+
+.juggernaut-taunt {
+	background-image: url('../images/juggernaut-taunt1.gif');
+}
+
+.juggernaut-crazy {
+	background-image: url('../images/juggernaut-crazy.gif');
+}
+
+.juggernaut-dive {
+	background-image: url('../images/juggernaut-dive.gif');
+}
+
+.juggernaut-earth {
+	background-image: url('../images/juggernaut-earth.gif');
+}
+
+.juggernaut-dash {
+	background-image: url('../images/juggernaut-dash.gif');
+}
+
+.wolv-c1, .wolv-hp, .wolvie-crouchblock, .wolvie-dashing, .wolvie-drillclaw, .wolvie-standingattacks, .wolvie-timeout, .wolvie-tnt, .wolvie-wins2 {
+	display:none;
+}
+
+
+.wolv-c1 {
+	background-image: url('../images/wolv-c1.gif');
+}
+
+.wolv-hp {
+	background-image: url('../images/wolv-hp.gif');
+}
+
+.wolvie-crouchblock {
+	background-image: url('../images/wolvie-crouchblock.gif');
+}
+
+.wolvie-dashing {
+	background-image: url('../images/wolvie-dashing.gif');
+}
+
+.wolvie-drillclaw {
+	background-image: url('../images/wolvie-drillclaw.gif');
+}
+
+.wolvie-stand {
+	background-image: url('../images/wolvie-stand.gif');
+}
+
+.wolvie-standingattacks {
+	background-image: url('../images/wolvie-standingattacks.gif');
+}
+
+.wolvie-timeout {
+	background-image: url('../images/wolvie-timeout.gif');
+}
+
+.wolvie-tnt {
+	background-image: url('../images/wolvie-tnt.gif');
+}
+
+.wolvie-wins2 {
+	background-image: url('../images/wolvie-wins2.gif');
+}
+
+/*.nav {
+	position: absolute;
+	bottom: 150px;
+	display: inline-block;
+	margin-top: 20px;
+	width: 659px;
+	font-family: Helvetica, Arial, sans-serif;
+	letter-spacing: 8px;
+	font-weight: bold;
+	color: #2157BF;
+	background-color: #EFC434;
+	border-radius: 15px;
+	font-size: 15px;
+	padding: 1px;
+	text-align: center;
+}*/
+
+#nav {
+	position: absolute;
+	bottom: 45px;
+	background-color: #EFC434;
+	border: 1px solid #00274c;
+	clear: both;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center; 
+	font-size: 10px;}
+	
+#nav li {
+	display: inline;
+	margin: 0 auto;
+	padding: 0px 0px; }
+	
+#nav a {
+	border-left: 1px solid  #EFC434;
+	border-right: 1px solid  #EFC434;
+	color: #2157BF;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 5px;
+	text-decoration: none; }
+	
+#nav a:hover {
+	background-color: #2157BF;
+	color: #EFC434;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	box-shadow: 0px 1px 1px 1px #111111;
+	text-decoration: underline; }
+	
+	
+.starburst {
+	background: yellow;
+	-webkit-animation:redyellow 1s infinite; /* Chrome, Safari, Opera */
+	animation:redyellow 1s infinite;
+}
+
+.lightstarburst {
+	background: yellow;
+	-webkit-animation:blackwhite 1s infinite; /* Chrome, Safari, Opera */
+	animation:blackwhite 1s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes redyellow
+{
+0%   {background:red;}
+10%  {background:yellow;}
+20%  {background:green;}
+30% {background:blue;}
+40%   {background:orange;}
+50%  {background:purple;}
+60%  {background:red;}
+70% {background:yellow;}
+80%  {background:green;}
+90%  {background:blue}
+100% {background:orange;}
+}
+
+/* Standard syntax */
+@keyframes redyellow
+{
+0%   {background:red;}
+10%  {background:yellow;}
+20%  {background:green;}
+30% {background:blue;}
+40%   {background:orange;}
+50%  {background:purple;}
+60%  {background:red;}
+70% {background:yellow;}
+80%  {background:green;}
+90%  {background:blue}
+100% {background:orange;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes blackwhite
+{
+0%   {background:black;}
+10%  {background:white;}
+20%   {background:black;}
+30%  {background:white;}
+40%   {background:black;}
+50%  {background:white;}
+60%   {background:black;}
+70%  {background:white;}
+80%   {background:black;}
+90%  {background:white;}
+100%   {background:black;}
+}
+
+/* Standard syntax */
+@keyframes  blackwhite
+{
+0%   {background:black;}
+10%  {background:white;}
+20%   {background:black;}
+30%  {background:white;}
+40%   {background:black;}
+50%  {background:white;}
+60%   {background:black;}
+70%  {background:white;}
+80%   {background:black;}
+90%  {background:white;}
+}
