@@ -1,0 +1,232 @@
+/* Adobe Kuler Birdfolio Blues
+
+Darkest Blue #2B3A42
+Dark Blue #3F5765
+Light Blue #BDD4DE
+White #EFEFEF
+Orange #FF530D
+
+*/
+
+/* Adobe Kuler Business Professional
+
+Darkest Blue #00132B
+Light Blue #7F9DB0
+Lightest Blue #C5E2ED
+White #FFFFFF
+Orange #F95900
+
+*/
+
+/* Adobe Kuler anggo djago
+
+Darkest Blue #002A4A
+Light Blue #17607D
+White: #FFF1CE
+Yellow #FF9311
+Orange #D64700
+
+*/
+
+/* Adobe Kuler JR-01-Cool
+
+Dark Gray #22282F
+Medium Gray #323A46
+LightGray #E9F0F5
+White: #FFFFFF
+OrangeRed #EB4A33
+
+*/
+
+
+body { 
+	margin: 0;
+	font: normal 12px/18px 'Helvetica', Arial, sans-serif;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 16px;
+	background-color: #33ccff;
+	background: #E9F0F5;
+
+	
+}
+
+.wrapper  { 
+	width: 900px;
+	margin: 0 auto;
+	height: auto;
+	text-align: center;
+	background: white;
+	clear: both;
+	word-wrap: break-word;
+	height: 100%;
+	background: #E9F0F5;
+}
+
+
+.content { 
+	position: relative; 
+	padding: 20px 75px;
+	margin: 0 auto;
+	height: auto;
+	display: none;
+	height: 100%;
+}
+
+
+.header {
+	margin-left: 30px;
+	position: absolute;
+	top: 0;
+	padding: 20px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.header  h1{ 
+	float: left;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding: 10px 0px;
+	color: #E9F0F5;
+	color: #33ccff;
+	font-size: 45px;
+	font-style: italic;
+	/*background-image: -webkit-gradient(
+	linear,
+	left top, left bottom,
+	from(white),
+	to(#E9F0F5)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;*/
+}
+
+.header h2 {
+	float: left;
+	font-size: 45px;
+	padding: 8px 5px;
+	font-style: italic;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	/*background-image: -webkit-gradient(
+	linear,
+	left top, left bottom,
+	from(white),
+	to(#E9F0F5)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;*/
+}
+
+.header h3 {
+	font-size: 16px;
+	color: #E9F0F5;
+	letter-spacing: 7px;
+	font-family: 'Lato', sans-serif;
+}
+
+.top {
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: #EB4A33;
+	background-color: #22282F;
+	width: 900px;
+	height: 90px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	word-wrap: break-word;
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.nav {
+	background-color: #E9F0F5;
+	float: right;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	clear: both;
+	list-style: none;
+	margin: 0;
+	margin-right: 50px;
+	margin-top: 25px;
+	padding: 0;
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+	}
+	
+.nav li {
+	border-right: dotted 1px  #22282F;
+	display: inline;
+	margin: 0 auto;
+	padding: 0px 0px; }
+	
+.nav a {
+	font-family: 'Open Sans', sans-serif;
+	color:  #22282F;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 10px;
+	text-decoration: none; }
+	
+.nav a:hover {
+	text-decoration: underline;
+	}
+
+.bodyofwork  { 
+	top: 120px;
+	position: relative;
+	margin: 0 auto;
+	height: auto;
+	text-align: center;
+	clear: both;
+	height: 100%;
+	width: 800px;
+}
+
+.showcase {
+	border-radius: 5px;
+	background-color: white;
+	padding: 25px 0px;
+	margin-bottom: 25px;
+	-webkit-box-shadow: 0px 15px 15px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 15px 15px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 15px 15px 0px rgba(50, 50, 50, 0.75);
+}
+	
+.showcase h1{
+	margin-left: 100px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	width: 600px;
+	text-align: left;
+	font-size: 20px;
+	text-decoration: underline;
+	padding-bottom: 5px;
+	color: #EB4A33;
+}
+
+.showcase p {
+	margin-left: 100px;
+	width: 600px;
+	text-align: left;
+	font-size: 18px;
+	padding: 5px 0px;
+	color:  #22282F;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.showcase img {
+	width: 600px;
+	height: 500px;
+	border-radius: 15px;
+	/*-webkit-box-shadow: 0px 15px 15px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 15px 15px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 15px 15px 0px rgba(50, 50, 50, 0.75);*/
+}

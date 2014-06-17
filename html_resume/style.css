@@ -1,0 +1,112 @@
+/* style my resume, please! */
+body {
+	margin: 0;
+	background-color: #3f3f3f;
+}
+
+#wrapper1 {
+	width: 60%;
+	margin: 0px auto;
+}
+
+#content {
+	position: relative;
+	padding: 15px 25px 60px 25px;
+	background-color: #F8F8FF;
+	font-family: Arial, sans-serif;
+	color: #292421;
+}
+
+h2 {
+	letter-spacing: 5px;
+	font-family: Impact, sans-serif;
+	font-size: 25px;
+}
+
+h3 {	
+	margin: 10px 40px;
+	font-size: 18px;
+	font-family: Verdana, sans-serif;
+	color: #1f1f1f;
+}
+
+ul {
+	list-style-type: square;
+}
+
+p, li {
+	font-size: 13px;
+	color: #212121;
+}
+
+em {
+	font-family: courier, sans-serif;
+}
+
+hr {
+	border: 1px dotted #303030;
+}
+
+section p, li {
+	margin: 5px 50px;
+}
+
+#header {
+	overflow:hidden;
+	background-color: white;
+	padding: 5px;
+	width: 40%;
+	border: 1px solid black;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 15px;
+}
+
+#header * {
+	vertical-align: middle;
+}
+
+#header p {
+	line-height: 95%;
+}
+
+#header img {
+	width: 20px;
+	height: 20px;
+}
+
+#email1 {
+	border-radius: 15px;
+	padding: 5px;
+	background-color: steelblue;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#header hr {
+	clear:both;
+	border: 3px double #202020;
+}
+
+.jobtitle {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#footer {
+	display: block;
+	position: fixed;
+	width: 60%;
+	bottom: 0;
+	background-color: #151515;
+	font-family: courier, sans-serif;
+
+}
+
+#footer p  {
+	text-align: center;
+	padding: 0px 15px;
+	color: white;
+	letter-spacing: 3px;
+}
